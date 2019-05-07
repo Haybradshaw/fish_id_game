@@ -1,68 +1,89 @@
 
 
-const gameCount = 0
 //-----constants---
-fishArray = [{ name : 'redfish',
-              imgFile: '../picture/redfish.jpg', 
-                  options: 
-                    {
-                       isCorrect: false,
-                       species: 'Red Snapper'
-                    ,
-                    
-                      isCorrect: true,
-                      species: 'Red Drum'
-                    }} ,
-              { name: 'ladyfish',
-                 imgFile: '../picture/ladyfish.jpg',
-                    options: 
-                      {
-                        isCorrect: true,
-                        species: 'ladyfish'
-                      ,
-                      
-                        isCorrect: false,
-                        species: 'spanish mackrel'
-                      }},
-              { name: 'trout',
-                imgFile: '../picture/trout.jpg',
-                  options:
-                    {
-                      isCorrect: false,
-                      species: 'mullet'
-                    ,
-                  
-                      isCorrect: true,
-                      species: 'trout'
-                    }},
-                  ];
+
+const redFish = {
+  imgFile: '../picture/redfish.jpg',
+    option: [
+    {
+      isCorrect: false,
+      species: 'red snapper'
+    },
+    {
+      isCorrect: true,
+      species: 'red fish'
+    }
+  ]
+}
+
+const ladyFish = {
+  imgFile: '../picture/ladyfish.jpg',
+    option: [
+      {
+        isCorrect: true,
+        species: 'lady fish'
+      },
+      {
+        isCorrect: false,
+        species:'mullet'
+      }
+    ]
+}
 
 
 
 
 
-//----app state variables ----
-  const questions = [redfish, ladyfish, trout];
-
-  
 
 
-  //-----cache----
-  function renderQuestion(index) {
-    //create dom elements from this object
-    const selectedQuestion = questions[index];
-  }
+/*----- app's state (variables) -----*/
+const questions = [redFish, ladyFish];
 
-//check questiion 
+/*----- cached element references -----*/
+
+
+/*----- event listeners -----*/
+
+
+
+
+//a new button will fade in that will allow the person to render the next question
+
+
+
+/*----- functions -----*/
+
+const questionCounter = [];
+
+function playQuestion() {
+    const selectedQuestion = questions.pop();
+    questionCounter.push(selectedQuestion);
+    document.getElementById('image').src = "../picture/redfish";
+
+    renderButton('One', selectedQuestion.options[0].species)
+    renderButton('Two', selectedQuestion.options[1].species)
+
+}
+
 
 function renderButton(buttonNum, fishSpecies) {
-  document.getElementById(`answer${buttonNum}`).value = 
- fishSpecies;
+    document.getElementById(`answer${buttonNum}`).value = 
+   fishSpecies;
 };
 
+playQuestion();
 
-// event listners
- // document.querySelector('button').addEventListener('click', initialize);
 
-  //render? not sure where to start
-  
+// var ifrm = document.createElement('iframe');
+// ifrm.setAttribute('id', 'ifrm'); // assign an id
+// document.body.appendChild(ifrm); // to place at end of document
+// ifrm.setAttribute('src', questionCounter[0].incorrectVideoUrl);
+
+
+
+
+
+
+function nextQuestion() {
+
+}

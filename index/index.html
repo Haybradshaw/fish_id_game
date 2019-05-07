@@ -1,26 +1,47 @@
 
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>FISH ID GAME</title>
-  <link rel="stylesheet" href="../css/main.css">
-  <script defer src="../js/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fish ID Game</title>
+
+    <link rel="stylesheet" href="../index/index.html">
+    <script defer src="../js/main.js"></script>
+
+    <!-- landing page -->
+    <!-- <video autoplay loop muted width="100%" id='background-video'>
+        <source src="../unit1_project/filmscratches.m4v" type="video/mp4" />
+    </video>  -->
+
 </head>
 <body>
-     <header>Fish ID Game</header>
-        <main>img
-            <section>
-                <div class='question-image'>
-                        <!-- place the images here -->
-                </div>
-                <div class='answer-buttons'>
-                      <!-- place all the buttons here dynamically -->
-                </div>   
-            </section>
-        </main>   
+    <nav>
+        <span id='score'>
+            Score
+        </span>
+        <span id='question-counter'>
+            Question Counter
+        </span>
+
+    </nav>
+    <div class='game-container'>
+        <div class='movieQuote' id='movieQuote'>
+            Next Question
+        </div>
+
+        <div id='embeddedMovie'>
+        </div>
+
+
+        <div class='answer-buttons'>
+            <input type="button" class='answer' id='answerOne' value=''>
+            <input type="button" class='answer' id='answerTwo' value=''>
+            <input type="button" class='answer' id='answerThree' value=''>
+            <input type="button" class='answer' id='answerFour' value=''>
+        </div>
+    </div>
 </body>
 </html>
-
