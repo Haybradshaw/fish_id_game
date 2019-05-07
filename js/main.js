@@ -1,39 +1,65 @@
 
 
+const gameCount = 0
+//-----constants---
+fishArray = [{ name : 'redfish',
+              imgFile: '../picture/redfish.jpg', 
+                  options: 
+                    {
+                       isCorrect: false,
+                       species: 'Red Snapper'
+                    ,
+                    
+                      isCorrect: true,
+                      species: 'Red Drum'
+                    }} ,
+              { name: 'ladyfish',
+                 imgFile: '../picture/ladyfish.jpg',
+                    options: 
+                      {
+                        isCorrect: true,
+                        species: 'ladyfish'
+                      ,
+                      
+                        isCorrect: false,
+                        species: 'spanish mackrel'
+                      }},
+              { name: 'trout',
+                imgFile: '../picture/trout.jpg',
+                  options:
+                    {
+                      isCorrect: false,
+                      species: 'mullet'
+                    ,
+                  
+                      isCorrect: true,
+                      species: 'trout'
+                    }},
+                  ];
 
-//array of objs containing pictures of fish with two correct answers attached
-// to do, find the proper img sizes, and how to attach
-// to do, exsplore attaching buttons to answers inside each obj
-//to do exsplore how to attach win condition to buttons for each button
 
 
 
 
-//function to pick object from questions array
+//----app state variables ----
+  const questions = [redfish, ladyfish, trout];
 
-
-
-
-
-
-  const fishArray = [{ name: 'first', src: '../picture/redfish.jpg' },
-                     { name: 'second', src: '../picture/ladyfish.jpg' },
-
-  ];
-
-  console.log(fishArray);
   
 
 
-//function feature to clear dom and there by start the next question
-function nextQuestion () {
+  //-----cache----
+  function renderQuestion(index) {
+    //create dom elements from this object
+    const selectedQuestion = questions[index];
+  }
 
-}
+//check questiion 
 
-//function to randomize object array on reload(clearing the dom)
-function clearDom () {
-
+function renderButton(buttonNum, fishSpecies) {
+  document.getElementById(`answer${buttonNum}`).value = 
+ fishSpecies;
 };
+
 
 // event listners
  // document.querySelector('button').addEventListener('click', initialize);

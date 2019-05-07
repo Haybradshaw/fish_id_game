@@ -38,9 +38,20 @@ section {
     padding-top: 10%;
 }
 
+div {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    justify-content: row;
+    text-align: center;
+}
+
 h1 {
     font-family: Arial;
     font-size: small;
+    padding-left: 70px;
+    padding-right: 70px;
 }
 
 button {
