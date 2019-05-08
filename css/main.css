@@ -37,7 +37,7 @@ nav {
     font-size: 25px;
 }
 
-.game-container {
+.fishImg {
     grid-area: game-container;
     margin: 0;
     justify-items: center;
