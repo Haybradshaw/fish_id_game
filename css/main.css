@@ -1,62 +1,81 @@
-header {
-    column-span: 100vh;
-    height: 100px;
-    background-color: chartreuse;
-    padding-top: 3%;
-    
+* {
+    font-family: Helvetica, sans-serif
 }
-
 
 body {
-    font-family: Impact;
-    font-size: xx-large;
-    background-color: turquoise;
-    display: flex;
-    flex-direction: column;
-    justify-content: column;
-    text-align: center;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #000000;
+    color: #F7F9F9;
+    background-image: url(https://i.imgur.com/YaC6IG5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto;
+    grid-template-areas: 
+    "nav"
+    "game-container";
 }
-    
-    
 
-main {
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    grid-area: nav;
+}
+
+.answer {
+    background-color: lightblue;
+    color: black;
+    height: 75%;
+    width: 80%;
+    border-radius: 20%;
+    font-size: 25px;
+}
+
+.game-container {
+    grid-area: game-container;
+    margin: 0;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr auto 2fr;
+    grid-template-areas: 
+    "quote"
+    "answer-buttons";
+}
+
+.image {
+    grid-area: quote;
+    font-size: 25px;
+    font-weight: bold;
+    text-align:center;
+    display: flex;
     justify-content: center;
-    background: linear-gradient(lightblue, aqua);
-    height: 100vh;
-    padding-top: 4%;
-    
-}
-
-section {
     align-items: center;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: row;
-    justify-content: row;
-    text-align: center;
-    padding-top: 10%;
 }
 
-div {
-    align-items: center;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: row;
-    justify-content: row;
-    text-align: center;
+
+.answer-buttons {
+    grid-area: answer-buttons;
+    justify-items: center;
+    display: grid;
+    height: 40%;
+    width: 40%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "answer1 or answer2";
 }
 
-h1 {
-    font-family: Arial;
-    font-size: small;
-    padding-left: 70px;
-    padding-right: 70px;
+#answerOne {
+    grid-area: answer1;
 }
 
-button {
-    border-top: 5px solid black;
-    border-left: 5px solid black;
-    border-right: 5px solid black;
-    border-bottom: 5px solid black;
+#answerTwo {
+    grid-area: answer2;
 }
