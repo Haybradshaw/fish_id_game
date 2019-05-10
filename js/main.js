@@ -1,40 +1,92 @@
 /*----- constants -----*/
 const fishSpecies = [
-  { species: "redfish",
+  { pass: "redfish",
+    nopass: "salmon",
     img: 'images/redfish.jpg',
   }, 
-  { species: "ladyfish",
+  { pass: "ladyfish",
+    nopass: "minno",
     img: 'images/ladyfish.jpg',
-  }
+  },
+  { pass: "trout",
+  nopass: "marlin",
+    img: 'images/trout.jpg',
+  },
+  { pass: "flounder",
+    nopass:"tarpon",
+   img: 'images/flounder.jpg',
+  },
+  {pass: "kingfish",
+    nopass:"whale",
+   img: 'images/kingfish.jpg',  
+  },
+  
 ];
 
 //-----cache------
+var x = 0;
 const fish_img = document.getElementById('image');
 const next = document.getElementById('next');
-var answerOne = document.getElementById('answerOne')
-var answerTwo = document.getElementById('answerTwo')
+const answerOne = document.getElementById('answerOne');
+const answerTwo = document.getElementById('answerTwo');
+const reset = document.getElementById('reset');
 
 
 
-function handleClick() {
-    fish_img.src = '';
-    answerOne = '';
-    answerTwo = '';
-    render();
-};
 
-var x = 0;
-function nextFish(fishSpecies) {
+next.addEventListener('click', handleClick);
+
+answerTwo.addEventListener('click', function() {
+  alert('nopass');
+});
+
+answerOne.addEventListener('click', function() {
+  alert('pass');
+});
+
+reset.addEventListener('click', function() {
+  document.location.reload(true);
+});
+
+
+//------functions------
+
+// initalize(fishSpecies);
+function render(fishSpecies) {
   fish_img.src = fishSpecies[x].img;
+  answerOne.textContent = `${fishSpecies[x].pass}`;
+  answerTwo.textContent = `${fishSpecies[x].nopass}`;
   x += 1;
 };
 
 
-function render() {
-  nextFish(fishSpecies[x]);
+function handleClick() {
+  render(fishSpecies);
+
+  
 };
 
-next.addEventListener('click', handleClick);
+function nextFish() {
+  fish_img.src = fishSpecies[x].img;
+  x += 1;
+};
+
+function nextAnswer(fishSpecies) {
+  answerOne.pass = fishSpecies[x].pass;
+  x += 1;
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -152,6 +204,4 @@ next.addEventListener('click', handleClick);
 // }
 
 
-// function nextQuestion() {
-
-// }
+// function nextQuestion() 
