@@ -24,24 +24,29 @@ const fishSpecies = [
 ];
 
 //-----cache------
+const message = document.getElementById('message');
 var x = 0;
 const fish_img = document.getElementById('image');
 const next = document.getElementById('next');
 const answerOne = document.getElementById('answerOne');
 const answerTwo = document.getElementById('answerTwo');
 const reset = document.getElementById('reset');
+const or = document.getElementById('or');
 
 
 
+//---buttons----
 
 next.addEventListener('click', handleClick);
 
+//---todo change alerts to .interhtml feedback:done!
 answerTwo.addEventListener('click', function() {
-  alert('nopass');
+  message.innerHTML = 'nope';
 });
 
+//---todo change alerts to .interhtml feedback: done!
 answerOne.addEventListener('click', function() {
-  alert('pass');
+  message.innerHTML = 'thats correct';
 });
 
 reset.addEventListener('click', function() {
@@ -51,30 +56,46 @@ reset.addEventListener('click', function() {
 
 //------functions------
 
-// initalize(fishSpecies);
-function render(fishSpecies) {
-  fish_img.src = fishSpecies[x].img;
-  answerOne.textContent = `${fishSpecies[x].pass}`;
-  answerTwo.textContent = `${fishSpecies[x].nopass}`;
-  x += 1;
-};
 
+function init () {
+  message.innerHTML = 'click next to play'
+  answerOne.style.visibility = 'hidden';
+  answerTwo.style.visibility = 'hidden';
+  or.style.visibility = 'hidden';
+}
 
+//---- todo clear the p (feedback)--:Done!
 function handleClick() {
+  message.innerText = '';
   render(fishSpecies);
-
   
 };
+    function render(fishSpecies) {
+      fish_img.src = fishSpecies[x].img;
+      answerOne.textContent = `${fishSpecies[x].pass}`;
+      answerTwo.textContent = `${fishSpecies[x].nopass}`;
+      x += 1;
+      answerOne.style.visibility = 'visible'
+      answerTwo.style.visibility = 'visible'
+      or.style.visibility = 'visible'
+    };
 
 function nextFish() {
   fish_img.src = fishSpecies[x].img;
   x += 1;
 };
 
-function nextAnswer(fishSpecies) {
-  answerOne.pass = fishSpecies[x].pass;
-  x += 1;
-};
+init()
+
+// function hideButtons() {
+//   document.getElementById('answerOne').style.visibility = 'hidden';
+//   document.getElementById('answerTwo').style.visibility = 'hidden';
+
+
+// function nextAnswer(fishSpecies) {
+//   answerOne.pass = fishSpecies[x].pass;
+//   x += 1;
+// };
 
 
 
@@ -181,27 +202,3 @@ function nextAnswer(fishSpecies) {
 
 // /*----- event listeners -----*/
 
-// function feedBack() {
-
-//   document.getElementById('answerOne').addEventListener('click', function() {
-//       hideButtons();
-//       questionCounter[0].options[0].isCorrect === true  
-//       ? (document.getElementById('embeddedMovie').innerHTML = questionCounter[0].correctVideoUrl,
-//       document.getElementById('movieQuote').innerHTML = "CORRECT!")
-//       : (document.getElementById('embeddedMovie').innerHTML = questionCounter[0].incorrectVideoUrl,
-//       document.getElementById('movieQuote').innerHTML = "WRONG!");
-//   });
-//   document.getElementById('answerTwo').addEventListener('click', function() {
-//       hideButtons();
-//       questionCounter[0].options[1].isCorrect === true  
-//       ? (document.getElementById('embeddedMovie').innerHTML = questionCounter[0].correctVideoUrl,
-//       document.getElementById('movieQuote').innerHTML = "CORRECT!")
-//       : (document.getElementById('embeddedMovie').innerHTML = questionCounter[0].incorrectVideoUrl,
-//       document.getElementById('movieQuote').innerHTML = "WRONG!");
-//   });
-  
-
-// }
-
-
-// function nextQuestion() 

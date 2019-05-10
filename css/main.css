@@ -2,80 +2,58 @@
     font-family: Helvetica, sans-serif
 }
 
+p {
+font-family: 'helvtica';
+font-size: xx-large;
+color: aquamarine;
+justify-self: center;
+padding-top: 10px;
+/* outline-width: 2px;
+outline-color: black;
+unresponsive...
+ */
+}
+
 body {
-    min-height: 100vh;
-    margin: 0;
-    background-color: #000000;
-    color: #F7F9F9;
+    height: 100vh;
     background-image: url(https://i.imgur.com/YaC6IG5.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px auto;
-    grid-template-areas: 
-    "nav"
-    "game-container";
+    color: aquamarine;
 }
 
-nav {
+div {
+    justify-self: center;
+    padding-top: 5vh;
+}
+
+.answer-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    
+}
+
+.answerOne {
+    font-family: helvetica;
+    border: aquamarine;
+    outline-color: black;
+}
+
+.answerTwo {
+    font-family: helvetica;
+    border: aquamarine;
+    outline-color: black;
+    
+  
+}
+
+
+section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    grid-area: nav;
+
 }
 
-.answer {
-    background-color: lightblue;
-    color: black;
-    height: 75%;
-    width: 80%;
-    border-radius: 20%;
-    font-size: 25px;
-}
-
-.fishImg {
-    grid-area: game-container;
-    margin: 0;
-    justify-items: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 2fr auto 2fr;
-    grid-template-areas: 
-    "quote"
-    "answer-buttons";
-}
-
-.image {
-    grid-area: quote;
-    font-size: 25px;
-    font-weight: bold;
-    text-align:center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.answer-buttons {
-    grid-area: answer-buttons;
-    justify-items: center;
-    display: grid;
-    height: 40%;
-    width: 40%;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "answer1 or answer2";
-}
-
-#answerOne {
-    grid-area: answer1;
-}
-
-#answerTwo {
-    grid-area: answer2;
-}
